@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Caprem</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="base.js"></script>
+</head>
+
+<body>
+    <header>
+      <img src="imagens/logocaprem.jpg" width="auto" height="100px">
+    </header>
+
+    <form id="form" action="javascript:submitForm()" name="FormularioEnvia">
+        <div class="caixa-input">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" placeholder="Informe o nome" class="input required" minlength="3" oninput="nameValidate(event.target)">
+            <span class="erro-texto">O nome deve ter no mínimo 3 caracteres</span>
+        </div>
+
+        <div class="caixa-input">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" required placeholder="xxxx@xxxx.com" class="input required" oninput="emailValidate(event.target)">
+            <span class="erro-texto">Email inválido</span>
+        </div>
+
+        <div class="caixa-input">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" required placeholder="Digite sua mensagem..." cols="30" rows="10" class="input required" oninput="messageValidate(event.target)"></textarea>
+            <span class="erro-texto">Campo obrigatório</span>
+        </div>
+
+
+        <button type="submit" name="FormularioEnvia">Enviar</button>
+    </form>
+</body>
+</html>
